@@ -11,7 +11,7 @@ public class TodosTest {
     public void shouldAddThreeTasksOfDifferentType() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         EpicTask epic = new EpicTask(55, subtasks);
 
         MeetingTask meeting = new MeetingTask(
@@ -27,7 +27,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic, meeting };
+        Task[] expected = {simpleTask, epic, meeting};
         Task[] actual = todos.findAll();
         assertArrayEquals(expected, actual);
     }
@@ -45,7 +45,7 @@ public class TodosTest {
         todos.add(meeting);
 
         Task[] result = todos.search("тест");
-        Task[] expected = {simpleTask,epic, meeting};
+        Task[] expected = {simpleTask, epic, meeting};
         assertArrayEquals(expected, result);
 
         Task[] result2 = todos.search("баг");
